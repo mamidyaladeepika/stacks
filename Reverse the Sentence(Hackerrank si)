@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int t;
+    cin>>t;
+    for(int j=0;j<=t;j++){
+        string str;
+        getline(cin,str);
+        stack<string> v;
+        string s;
+        for(int i=0;i<str.size();i++){
+            if(str[i]==' '){
+                v.push(s);
+                s.clear();
+            }
+            else
+            s+=str[i];
+        }
+        v.push(s);
+        while(!v.empty()){
+            cout<<v.top();
+            v.pop();
+        }
+        cout<<endl;
+
+    }
+    return 0;
+}
